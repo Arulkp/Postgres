@@ -1,0 +1,14 @@
+Database Backup
+
+	sudo su postgres -c "pg_dump dbname | gzip -c > /home/dbname.dump.out.gz"
+
+Restore Database 
+    
+    1. create database dbname;
+    2. alter database dbname owner to odoo;
+    3. psql dbname > restore_file.dump.out
+
+ Filestore Backup
+
+ 	1.tar -czvf dbname.tar.gz ~/.local/share/Odoo/filestore/dbname
+ 	2.tar xzvf dbname.tar.gz 
