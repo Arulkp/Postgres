@@ -12,3 +12,21 @@ Restore Database
 
  	1.tar -czvf dbname.tar.gz ~/.local/share/Odoo/filestore/dbname
  	2.tar xzvf dbname.tar.gz 
+
+Create Readonly User
+	CREATE ROLE readonlyuser WITH LOGIN PASSWORD 'password' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
+	
+Login Readonly User
+	psql -h localhost -d dbname -U readonlyuser -W
+
+Permission to table
+	GRANT CONNECT ON DATABASE db_name TO readonlyuser;
+	GRANT USAGE ON SCHEMA public TO readonlyuser;
+	GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonlyuser;
+	GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO readonlyuser;
+	
+Revoke Permission
+	REVOKE CONNECT ON DATABASE astir_live_sep_14 FROM readonlyuser;
+	REVOKE USAGE ON SCHEMA public FROM readonlyuser;
+	REVOKE SELECT ON ALL TABLES IN SCHEMA public FROM readonlyuser;
+	REVOKE SELECT ON ALL SEQUENCES IN SCHEMA public FROM readonlyuser;
