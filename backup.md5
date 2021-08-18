@@ -15,7 +15,10 @@ Restore Database
 
 Create Readonly User
 	CREATE ROLE readonlyuser WITH LOGIN PASSWORD 'password' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
-	
+
+Create View
+	CREATE OR REPLACE VIEW sale_view AS ( select so.name as Sale_Number,rp.name as Partner_name,so.date_order as RFQ_Received,so.quote_promise,so.quote_sent,so.order_received,so.order_promise,so.confirmation_sent from sale_order as so,res_partner as rp where rp.id = so.partner_id);
+
 Login Readonly User
 	psql -h localhost -d dbname -U readonlyuser -W
 
@@ -30,3 +33,7 @@ Revoke Permission
 	REVOKE USAGE ON SCHEMA public FROM readonlyuser;
 	REVOKE SELECT ON ALL TABLES IN SCHEMA public FROM readonlyuser;
 	REVOKE SELECT ON ALL SEQUENCES IN SCHEMA public FROM readonlyuser;
+	
+Check Permission 
+	select * from information_schema.role_table_grants where grantee='readonlyuser'
+
