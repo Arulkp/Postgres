@@ -36,4 +36,13 @@ Revoke Permission
 	
 Check Permission 
 	select * from information_schema.role_table_grants where grantee='readonlyuser'
+	
+Install pip2 in Ubuntu 20.04
 
+	https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/
+
+Insall Requirement.txt odoo 10 
+
+	sudo apt-get install libxml2-dev libxslt-dev python-dev
+	sudo pip install lxml
+	sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
