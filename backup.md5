@@ -46,3 +46,5 @@ Insall Requirement.txt odoo 10
 	sudo apt-get install libxml2-dev libxslt-dev python-dev
 	sudo pip install lxml
 	sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
+	sudo apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev python3-pip
+
