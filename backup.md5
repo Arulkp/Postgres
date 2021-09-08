@@ -34,6 +34,9 @@ Revoke Permission
 	REVOKE SELECT ON ALL TABLES IN SCHEMA public FROM readonlyuser;
 	REVOKE SELECT ON ALL SEQUENCES IN SCHEMA public FROM readonlyuser;
 	
+Export CSV Data
+	 \copy (SELECT name FROM table_name limit 1) to 'file_path' DELIMITER ',' CSV HEADER;
+	
 Check Permission 
 	select * from information_schema.role_table_grants where grantee='readonlyuser'
 	
