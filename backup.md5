@@ -50,6 +50,11 @@ Insall Requirement.txt odoo 10
 	sudo pip install lxml
 	sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
 	sudo apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev python3-pip
+
+sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo apt install -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+wkhtmltopdf --version
+
 	
 
 sudo pip3 install virtualenv
