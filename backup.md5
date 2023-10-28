@@ -22,6 +22,12 @@ Create View
 Login Readonly User
 	psql -h localhost -d dbname -U readonlyuser -W
 
+
+https://stackoverflow.com/questions/4761454/postgresql-database-size-tablespace-size-much-bigger-then-calculated-total-sum?rq=3
+
+
+https://www.odoo.com/forum/help-1/odoo-database-grows-quickly-112638
+
 Permission to table
 	GRANT CONNECT ON DATABASE db_name TO readonlyuser;
 	GRANT USAGE ON SCHEMA public TO readonlyuser;
